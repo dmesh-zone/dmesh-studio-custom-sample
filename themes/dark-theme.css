@@ -1,0 +1,173 @@
+@font-face {
+  font-family: "Outfit";
+  src: url("../../fonts/custom/Outfit-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../../fonts/custom/Outfit-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root[data-theme="dark"] {
+  /* Typography - Custom WOFF font */
+  --font-family: "Outfit", "Roboto", "Helvetica", "Arial", sans-serif !important;
+  --font-family-heading: "Outfit", "Roboto", "Helvetica", "Arial", sans-serif !important;
+
+  /* Primary Theme Color */
+  --primary-main: #ff5500;
+
+  /* React Flow Overrides */
+  --xy-background-color: #141414;
+  --xy-background-pattern-dots-color: #777;
+  --xy-background-pattern-lines-color: #777;
+  --xy-background-pattern-cross-color: #777;
+  --xy-node-color: #f8fafc;
+
+  /* M3 Tokens */
+  --m3-surface: #141414;
+  --m3-surface-variant: #1e293b;
+  --m3-on-surface: #f8fafc;
+  --m3-on-surface-variant: #cbd5e1;
+  --m3-outline: #475569;
+  --m3-outline-variant: #334155;
+  /* Node elements */
+  --node-icon-bg: var(--m3-outline-variant);
+
+  /* Domain Palette - Darkened for dark mode */
+  --domain-palette-01: #1e293b;
+  --domain-palette-02: #4a452a;
+  --domain-palette-03: #224a3e;
+  --domain-palette-04: #4a3821;
+  --domain-palette-05: #3f4722;
+  --domain-palette-06: #3b3054;
+  --domain-palette-07: #1e3a63;
+  --domain-palette-08: #47264d;
+  --domain-palette-09: #542724;
+  --domain-palette-10: #212c5c;
+  --domain-palette-11: #1e4a22;
+  --domain-palette-12: #1a2f5c;
+
+  /* Domain Label Colors */
+  --domain-label-bg: #1e293b;
+  --domain-label-text: #cbd5e1;
+  --domain-label-border: #334155;
+
+  /* Connector Colors */
+  --connector-default: #475569;
+  --connector-hovered-node: #ff5500;
+  --connector-hovered-edge: #ff5500;
+  --connector-faint: #0f172a;
+
+  /* Tiers Colors */
+  --tier-dataSource-color: #334155;
+  --tier-dataSource-banner: transparent;
+  --tier-sourceAligned-color: #ff5500;
+  --tier-sourceAligned-banner: transparent;
+  --tier-curated-color: #ff5500;
+  --tier-curated-banner: transparent;
+  --tier-consumerAligned-color: #ff5500;
+  --tier-consumerAligned-banner: transparent;
+  --tier-application-color: #334155;
+  --tier-application-banner: transparent;
+  --tier-agent-color: #334155;
+  --tier-agent-banner: transparent;
+
+  /* KPI Colors */
+  --kpi-dataSources-bg: #500f24;
+  --kpi-dataProducts-bg: #172554;
+  --kpi-outputPorts-bg: #2e1065;
+  --kpi-recordsIngested-bg: #022c22;
+  --kpi-recordsProcessed-bg: #431407;
+  --kpi-consumingApplication-bg: #042f2e;
+
+  /* Controls: Checkboxes */
+  --checkbox-accent: #ff5500;
+  --checkbox-size: 16px;
+  --checkbox-radius: 4px;
+  --checkbox-bg: #1e293b;
+  --checkbox-border: #475569;
+  --checkbox-checked-bg: #ff5500;
+  --checkbox-checked-border: #ff5500;
+
+  /* Controls: Buttons Base */
+  --button-radius: 6px;
+  --button-padding: 8px 16px;
+  --button-font-weight: 500;
+
+  /* Button Variants */
+  --button-primary-bg: #ff5500;
+  --button-primary-text: #ffffff;
+  --button-primary-hover: #e04a00;
+
+  --button-secondary-bg: #1e293b;
+  --button-secondary-text: #f8fafc;
+  --button-secondary-border: #475569;
+  --button-secondary-hover-bg: #334155;
+  --button-secondary-hover-border: #64748b;
+
+  --button-danger-bg: #ef4444;
+  --button-danger-text: #ffffff;
+  --button-danger-hover: #dc2626;
+
+  --button-ghost-text: #94a3b8;
+  --button-ghost-hover-bg: rgba(255, 255, 255, 0.1);
+
+  /* Side Panel Layout */
+  --side-panel-bg: #1e293b;
+  --side-panel-border: #334155;
+  --side-panel-text: #f8fafc;
+  --side-panel-close-btn: #94a3b8;
+
+  --side-panel-tab-container-border: #334155;
+  --side-panel-tab-inactive-text: #94a3b8;
+  --side-panel-tab-active-text: #ff5500;
+  --side-panel-tab-active-border: #ff5500;
+  --side-panel-tab-hover-bg: #0f172a;
+
+  --side-panel-btn-bg: #ff5500;
+  --side-panel-btn-border: #ff5500;
+  --side-panel-btn-text: #ffffff;
+  --side-panel-btn-hover-bg: #e04a00;
+  --side-panel-btn-hover-border: #e04a00;
+
+  /* Chips */
+  --chip-bg: #1e293b;
+  --chip-text: #f8fafc;
+  --chip-border: #475569;
+
+  --chip-hover-bg: #334155;
+  --chip-hover-text: #ffffff;
+  --chip-hover-border: #64748b;
+
+  --chip-focus-bg: #000000;
+  --chip-focus-text: #ffffff;
+  --chip-focus-border: #111111;
+
+  --chip-active-bg: #064e3b;
+  --chip-active-text: #34d399;
+  --chip-active-border: #064e3b;
+
+  --chip-inactive-bg: #7f1d1d;
+  --chip-inactive-text: #fca5a5;
+  --chip-inactive-border: #7f1d1d;
+
+  /* Inputs */
+  --input-bg: #1e293b;
+  --input-border-default: #475569;
+
+  /* Node Elements */
+  --node-icon-filter: grayscale(100%) invert(1) contrast(1.5);
+
+  /* Radio Buttons */
+  --radio-border: #94a3b8;
+  --radio-selected-border: #ffffff;
+  --radio-selected-dot: #ffffff;
+
+  /* Table */
+  --table-row-bg: #000000;
+  --table-row-hover-bg: #1a1a1a;
+}

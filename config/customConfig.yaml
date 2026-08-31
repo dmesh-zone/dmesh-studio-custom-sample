@@ -1,0 +1,213 @@
+# default config.yaml can be overridden by customConfig.yaml
+# defaultDataMeshOperationalDataUrl: http://localhost:8000/dmesh/discover
+# defaultDataMeshOperationalDataUrl: /DataMeshOperationalDataPetsExample.yaml
+defaultDataMeshOperationalDataUrl: /DataMeshOperationalDataPetsMultiEnvExample.yaml
+multi-environment: ["Dev", "QA", "Prod"]
+# default-environment: "Prod"
+
+single-domain-default-filter: False
+# zoom-to-fit-columns: False
+
+theme: custom
+
+navigation:
+  sections:
+    - name: "Explore"
+      pages:
+        - id: "mesh"
+          title: "Data Mesh"
+          icon: "Hub"
+          component: "DataMesh"
+        - id: "products"
+          title: "Data Products"
+          icon: "Layers"
+          component: "DataProducts"
+        - id: "sources"
+          title: "Data Sources"
+          icon: "Storage"
+          component: "DataSources"
+        - id: "applications"
+          title: "Applications"
+          icon: "WebAsset"
+          component: "Applications"
+    - name: ""
+      pages:
+        - id: "about"
+          title: "About"
+          icon: "Article"
+          component: "About"
+        - id: "settings"
+          title: "Settings"
+          icon: "Settings"
+          component: "Settings"
+
+domainNameCustomisation:
+  "food_production": "Food Production"
+  "petstore": "Petstore"
+
+sampleDataMeshOperationalDataUrls:
+  - http://localhost:8000/dmesh/discover
+  - /DataMeshOperationalDataPetsExample.yaml
+  - /DataMeshOperationalDataLongStringExample.yaml
+  - /DataMeshOperationalDataIconsExample.yaml
+  - /DataMeshOperationalDataIdCollisionExample.yaml
+  - /DataMeshOperationalDataGenExample.yaml
+  - /DataMeshOperationalDataDqExample.yaml
+  - /DataMeshOperationalDataPortAdapterExample.yaml
+  - /DataMeshOperationalDataObservability.yaml
+  - /DataMeshOperationalDataObservabilityLight.yaml
+
+iconMap:
+  dataproduct: /icons/dataproduct.svg
+  database: /icons/database.svg
+  table: /icons/table.svg
+  oracle: /icons/oracle.svg
+  rdsoracle: /icons/rdsoracle.svg
+  rdsaurora: /icons/rdsaurora.svg
+  rdsmariadb: /icons/rdsmariadb.svg
+  rdsmysql: /icons/rdsmysql.svg
+  rdspostgresql: /icons/rdspostgresql.svg
+  rdssqlserver: /icons/rdssqlserver.svg
+  sharepoint: /icons/sharepoint.svg
+  reltio: /icons/reltio.svg
+  veevavault: /icons/veeva.svg
+  ftp: /icons/ftp.svg
+  salesforce: /icons/salesforce.svg
+  sap: /icons/sap.svg
+  s3: /icons/s3.svg
+  redshift: /icons/redshift.svg
+  atlassian: /icons/atlassian.svg
+  jira: /icons/jira.svg
+  googleanalytics: /icons/googleanalytics.svg
+  servicenow: /icons/servicenow.svg
+  databricks: /icons/databricks.svg
+  deltalake: /icons/deltalake.svg
+  odata: /icons/odata.svg
+  snowflake: /icons/snowflake.svg
+  tibco: /icons/tibco.svg
+  tibcodv12n: /icons/tibco.svg
+  api: /icons/api.svg
+  iceberg: /icons/iceberg.svg
+  kafka: /icons/kafka.svg
+  kinesis: /icons/kinesis.svg
+  powerbi: /icons/powerbi.svg
+  agent: /icons/robot.svg
+  application: /icons/application.svg
+
+tiers:
+  dataSource:
+    label: DATA SOURCE
+    columnNumber: 1
+  sourceAligned:
+    label: DATA PRODUCT (SOURCE ALIGNED)
+    columnNumber: 2
+  curated:
+    label: DATA PRODUCT (CURATED)
+    columnNumber: 3
+  consumerAligned:
+    label: DATA PRODUCT (CONSUMER ALIGNED)
+    columnNumber: 4
+  application:
+    label: APPLICATION
+    columnNumber: 5
+  agent:
+    label: AGENT
+    columnNumber: 5
+
+observability:
+  kpis:
+    dataSources:
+      name: "Data sources"
+      visible: true
+      aggregation:
+        type: count
+        criteria:
+          dataProductTier: ["source", "dataSource"]
+    dataProducts:
+      name: "Data Products"
+      visible: true
+      aggregation:
+        type: count
+        criteria:
+          dataProductTier: ["sourceAligned", "curated", "consumerAligned"]
+    outputPorts:
+      name: "Output ports"
+      visible: true
+      aggregation:
+        type: sum
+        field: outputPortCount
+    recordsIngested:
+      name: "Records Ingested"
+      visible: true
+      aggregation:
+        type: sumMetric
+        metric: "dpPipelineRecordsProcessed"
+        criteria:
+          dataProductTier: ["sourceAligned"]
+    recordsProcessed:
+      name: "Records Processed"
+      visible: true
+      aggregation:
+        type: sumMetric
+        metric: "dpPipelineRecordsProcessed"
+        criteria:
+          dataProductTier: ["curated", "consumerAligned"]
+    consumingApplication:
+      name: "Consuming applications"
+      visible: true
+      aggregation:
+        type: count
+        criteria:
+          dataProductTier: ["source", "application"]
+  dimensions:
+    Pipeline:
+      icon: "▸"
+      healthCheck: "dpPipelineLastRunStateCheck"
+      keyResult:
+        metric: "dpPipelineLastRunStateCheck"
+        text: ""
+        case: upper
+      secondaryMetrics:
+        - metric: "dpPipelineRunDuration"
+          name: "Duration"
+        - metric: "dpPipelineRecordsProcessed"
+          name: "Records processed"
+        - metric: "dpPipelineMeanTimeBetweenFailuresCheck"
+          name: "MTBF (Mean Time Between Failure)"
+        - metric: "dpPipelineMeanTimeToRecoveryCheck"
+          name: "MTTR (Mean Time To Recovery)"
+    Consumption:
+      icon: "◈"
+      healthCheck: "dpOutputPortsResponseTimeCheck"
+      keyResult:
+        - metric: "dpOutputPortsResponseTimeCheck"
+          text: "data products within expected response time"
+      secondaryMetrics:
+        - metric: "dpConsumerQueryCount"
+          name: "Queries"
+        - metric: "dpOutputPortDistinctConsumers"
+          name: "Active consumers"
+      dataContractCheck: "dcOutputPortsResponseTimeMeanCheck"
+      dataContractMetrics:
+        - metric: "dcConsumerQueryCount"
+          name: "Queries"
+        - metric: "dcOutputPortDistinctConsumers"
+          name: "Active consumers"
+    Latency:
+      icon: "⧗"
+      healthCheck: "dpDataLatencyMaximumCheck"
+      dataContractCheck: "dcDataLatencyCheck"
+      keyResult:
+        metric: "dpDataLatencyMaximumCheck"
+        text: "is the worse data latency"
+    Quality:
+      icon: "✦"
+      healthCheck: "dpDataQualityRulesPassCheck"
+      keyResult:
+        metric: "dpDataQualityRulesPassCheck"
+        text: "of DQ rules passed"
+      secondaryMetrics:
+        - metric: "dcDataQualityRuleCount"
+          name: "Number of rules"
+        - metric: "dpDataQualityRuleFailCount"
+          name: "Rules Failed"

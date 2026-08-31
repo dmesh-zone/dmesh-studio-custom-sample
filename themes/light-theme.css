@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "Outfit";
+  src: url("../../fonts/custom/Outfit-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../../fonts/custom/Outfit-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  /* Typography - Custom WOFF font */
+  --font-family: "Outfit", "Roboto", "Helvetica", "Arial", sans-serif !important;
+  --font-family-heading: "Outfit", "Roboto", "Helvetica", "Arial", sans-serif !important;
+
+  /* Primary Theme Color */
+  --primary-main: #ff5500;
+
+  /* Button Base */
+  --button-radius: 4px;
+  --button-padding: 8px 16px;
+  --button-font-weight: 500;
+
+  /* Primary Button (Black/Dark default, Orange hover) */
+  --button-primary-bg: #111111;
+  --button-primary-text: #ffffff;
+  --button-primary-hover: #ff5500;
+  /* Rebranded Orange */
+
+  /* Secondary Button (Outlined - White bg, Black border -> Orange hover text/border) */
+  --button-secondary-bg: #ffffff;
+  --button-secondary-text: #111111;
+  --button-secondary-border: #111111;
+  --button-secondary-hover-bg: #ffffff;
+  --button-secondary-hover-text: #ff5500;
+  --button-secondary-hover-border: #ff5500;
+
+  /* Danger Button - Fallback to standard red since not specified in PDF */
+  --button-danger-bg: #dc2626;
+  --button-danger-text: #ffffff;
+  --button-danger-hover: #b91c1c;
+
+  /* Tertiary/Ghost Button (No background, Black text -> Orange text on hover) */
+  --button-ghost-text: #111111;
+  --button-ghost-hover-bg: #fff3ec;
+  /* Match the orange theme */
+
+  /* Checkboxes */
+  --checkbox-bg: #ffffff;
+  --checkbox-border: #6b7280;
+  /* Darker grey border for unselected */
+  --checkbox-checked-bg: #ea4335;
+  /* Using an orange-red based on the image */
+  --checkbox-checked-border: #ea4335;
+  --checkbox-check-color: #ffffff;
+  --checkbox-radius: 0px;
+
+  /* Input Fields (Match Input Field.pdf) */
+  --input-bg: #ffffff;
+  --input-border-default: #9ca3af;
+  --input-border-hover: #111111;
+  --input-border-focus: #ff5500;
+  --input-radius: 0px;
+
+  /* Domain Palette */
+  --domain-palette-01: #FFFFFF;
+  --domain-palette-02: #FCF5CA;
+  --domain-palette-03: #D5F5E9;
+  --domain-palette-04: #F8E7D0;
+  --domain-palette-05: #EBF6CD;
+  --domain-palette-06: #E5DBFA;
+  --domain-palette-07: #D0E3FF;
+  --domain-palette-08: #F4DBF9;
+  --domain-palette-09: #FBDAD8;
+  --domain-palette-10: #D3DBFA;
+  --domain-palette-11: #C6F5C9;
+  --domain-palette-12: #CAD9FA;
+
+  /* Connector Colors (Customize the colors of the edges/connectors between nodes) */
+  --connector-default: #9ca3af;
+  /* Standard color of edges when nothing is hovered */
+  --connector-hovered-node: #ff5500;
+  /* Color of edges connected to a node when hovering over that node */
+  --connector-hovered-edge: #ff5500;
+  /* Color of a specific edge when hovering directly over it */
+  --connector-faint: #ffffff;
+  /* Color of unconnected edges when hovering a node (typically used to fade them out) */
+
+  /* KPI Colors (Customize the background colors of the KPI cards) */
+  --kpi-dataSources-bg: #e87960;
+  --kpi-dataProducts-bg: #ce9a96;
+  --kpi-outputPorts-bg: #cfb3b9;
+  --kpi-recordsIngested-bg: #cfbdc6;
+  --kpi-recordsProcessed-bg: #c9cad6;
+  --kpi-consumingApplication-bg: #bfd5e6;
+
+  /* Tiers Colors (Customize the background and banner colors of data products by tier) */
+  --tier-dataSource-color: #e2e8f0;
+  --tier-dataSource-banner: #dadada;
+  --tier-sourceAligned-color: #bfdbfe;
+  --tier-sourceAligned-banner: #f5f5f5;
+  --tier-curated-color: #bfdbfe;
+  --tier-curated-banner: #f5f5f5;
+  --tier-consumerAligned-color: #bfdbfe;
+  --tier-consumerAligned-banner: #f5f5f5;
+  --tier-agent-color: #e2e8f0;
+  --tier-agent-banner: #f5f5f5;
+  --tier-application-color: #e2e8f0;
+  --tier-application-banner: #dadada;
+
+  /* Side Panel Layout */
+  --side-panel-bg: #ffffff;
+  --side-panel-border: #111111;
+  --side-panel-text: #111111;
+  --side-panel-close-btn: #111111;
+
+  --side-panel-tab-container-border: #e5e7eb;
+  --side-panel-tab-inactive-text: #111111;
+  --side-panel-tab-active-text: #111111;
+  --side-panel-tab-active-border: #ff5500;
+  --side-panel-tab-hover-bg: #f3f4f6;
+
+  --side-panel-btn-bg: #ffffff;
+  --side-panel-btn-border: #111111;
+  --side-panel-btn-text: #111111;
+  --side-panel-btn-hover-bg: #ff5500;
+  --side-panel-btn-hover-border: #ff5500;
+
+  /* Chips */
+  --chip-bg: #ffffff;
+  --chip-text: #111111;
+  --chip-border: #9ca3af;
+
+  --chip-hover-bg: #f3f4f6;
+  --chip-hover-text: #111111;
+  --chip-hover-border: #111111;
+
+  --chip-focus-bg: #333333;
+  --chip-focus-text: #ffffff;
+  --chip-focus-border: #333333;
+
+  --chip-active-bg: #ffffff;
+  --chip-active-text: #111111;
+  --chip-active-border: #9ca3af;
+
+  --chip-inactive-bg: #ffffff;
+  --chip-inactive-text: #111111;
+  --chip-inactive-border: #9ca3af;
+
+  /* Radio Buttons */
+  --radio-border: #64748b;
+  --radio-selected-border: #111111;
+  --radio-selected-dot: #111111;
+}
