@@ -214,14 +214,14 @@ function DataProductsTable() {
         const loadData = async () => {
             try {
                 // 1. Fetch Config
-                const configRes = await fetch(normalizePath(`/config.yaml?t=${Date.now()}`));
-                if (!configRes.ok) throw new Error('Failed to load config.yaml');
+                const configRes = await fetch(normalizePath(`/config/base/config.yaml?t=${Date.now()}`));
+                if (!configRes.ok) throw new Error('Failed to load config/base/config.yaml');
                 const configText = await configRes.text();
                 let configData = YAML.parse(configText) || {};
 
                 // Load customConfig if exists
                 try {
-                    const customRes = await fetch(normalizePath(`/customConfig.yaml?t=${Date.now()}`));
+                    const customRes = await fetch(normalizePath(`/config/custom/config.yaml?t=${Date.now()}`));
                     if (customRes.ok) {
                         const customText = await customRes.text();
                         const customData = YAML.parse(customText);
