@@ -196,6 +196,12 @@ function DataProductsTable() {
 
     // Filter states
     const [envFilter, setEnvFilter] = useState('');
+    
+    useEffect(() => {
+        if (envFilter) {
+            localStorage.setItem('dmesh-selected-env', envFilter);
+        }
+    }, [envFilter]);
     const [selectedDomains, setSelectedDomains] = useState(() => {
         try {
             const stored = localStorage.getItem('dmesh-selected-domains');
@@ -248,7 +254,9 @@ function DataProductsTable() {
                 const envList = configData['multi-environment'] || ['Dev', 'QA', 'Prod'];
                 setEnvironments(envList);
                 const defaultEnv = configData['default-environment'] || envList[envList.length - 1];
-                setEnvFilter(defaultEnv);
+                const storedEnv = localStorage.getItem('dmesh-selected-env');
+                const envToSet = storedEnv && envList.includes(storedEnv) ? storedEnv : defaultEnv;
+                setEnvFilter(envToSet);
 
                 // 2. Fetch Data Mesh Operations Data
                 const dataMeshOperationsUrl = normalizePath(configData.defaultDataMeshOperationalDataUrl);
