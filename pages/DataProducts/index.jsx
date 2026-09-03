@@ -196,7 +196,16 @@ function DataProductsTable() {
 
     // Filter states
     const [envFilter, setEnvFilter] = useState('');
-    const [selectedDomains, setSelectedDomains] = useState([]);
+    const [selectedDomains, setSelectedDomains] = useState(() => {
+        try {
+            const stored = localStorage.getItem('dmesh-selected-domains');
+            return stored ? JSON.parse(stored) : [];
+        } catch { return []; }
+    });
+
+    useEffect(() => {
+        localStorage.setItem('dmesh-selected-domains', JSON.stringify(selectedDomains));
+    }, [selectedDomains]);
     const [selectedTypes, setSelectedTypes] = useState([]);
     const [searchText, setSearchText] = useState('');
 
