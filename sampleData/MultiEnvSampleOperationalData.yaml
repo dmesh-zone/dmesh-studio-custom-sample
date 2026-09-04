@@ -2,7 +2,7 @@
   data:
     - kind: DataProduct
       id: 4c9c60a6-9b7a-559f-9acb-2253b9f27a78
-      name: Petstore X
+      name: petstore_x
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -13,10 +13,12 @@
           value: dataSource
         - property: technology
           value: rdsoracle
+        - property: dataProductBusinessName
+          value: Petstore X
       outputPorts: []
     - kind: DataProduct
       id: 30982ac5-326d-5744-915c-63ef5013c46e
-      name: Petstore Y
+      name: petstore_y
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -27,10 +29,12 @@
           value: dataSource
         - property: technology
           value: rdsoracle
+        - property: dataProductBusinessName
+          value: Petstore Y
       outputPorts: []
     - kind: DataProduct
       id: a538c642-e1d5-4c07-9e79-e31be0bd295c
-      name: Petstore Z
+      name: petstore_z
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -41,10 +45,12 @@
           value: dataSource
         - property: technology
           value: rdsoracle
+        - property: dataProductBusinessName
+          value: Petstore Z
       outputPorts: []
     - kind: DataProduct
       id: b3d406b9-952f-5df4-8ab5-b10c1521d0ad
-      name: Food Production
+      name: food_production
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -55,10 +61,12 @@
           value: dataSource
         - property: technology
           value: rdsoracle
+        - property: dataProductBusinessName
+          value: Food Production
       outputPorts: []
     - kind: DataProduct
       id: 128a3c4b-71c6-5929-aa27-c98974544bf4
-      name: Petstore X
+      name: petstore_x
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -69,6 +77,8 @@
           value: sourceAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Petstore X
       outputPorts:
         - name: customers
           version: v1
@@ -437,7 +447,7 @@
                 - 2024-06-01T08:00:00Z
     - kind: DataProduct
       id: 3297774a-3037-5b64-b0ff-41f6c075f1d6
-      name: Petstore Y
+      name: petstore_y
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -448,6 +458,8 @@
           value: sourceAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Petstore Y
       outputPorts:
         - name: customers
           version: v1
@@ -797,7 +809,7 @@
                 - 2024-06-01T08:00:00Z
     - kind: DataProduct
       id: 9a82ac51-c30d-45f4-9b5c-83ef5013c46e
-      name: Petstore Z
+      name: petstore_z
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -808,6 +820,8 @@
           value: sourceAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Petstore Z
       outputPorts:
         - name: customers
           version: v1
@@ -826,7 +840,7 @@
           contractId: 688de69e-651c-5bef-a503-bf2b68c7e7c1
     - kind: DataProduct
       id: f951f3d6-810d-5c6b-89c4-d12c14ba15b0
-      name: Food Production
+      name: food_production
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -837,6 +851,8 @@
           value: sourceAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Food Production
       outputPorts:
         - name: food_products
           version: v1
@@ -1129,7 +1145,7 @@
                   query: rating BETWEEN 0 AND 5
     - kind: DataProduct
       id: 7d4e218a-a30a-579d-982d-3e8bea3904a6
-      name: Unified Petstore Retail Data
+      name: unified_petstore_retail_data
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -1140,6 +1156,8 @@
           value: curated
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Unified Petstore Retail Data
       outputPorts:
         - name: unified_customers
           version: v1
@@ -1443,7 +1461,7 @@
                 - CAT-000
     - kind: DataProduct
       id: ac45ad74-3fb6-5b5a-bc1a-edb0968a154f
-      name: Food Production Analytics Data
+      name: food_production_analytics_data
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -1454,6 +1472,8 @@
           value: curated
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Food Production Analytics Data
       outputPorts:
         - name: product_quality
           version: v1
@@ -1678,7 +1698,7 @@
                 - 2000
     - kind: DataProduct
       id: deebe052-0a1d-5d2d-b7f6-53c74cb25282
-      name: Petstore Yusiness Analytics
+      name: petstore_yusiness_analytics
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -1689,6 +1709,8 @@
           value: consumerAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Petstore Yusiness Analytics
       outputPorts:
         - name: sales_metrics
           version: v1
@@ -1875,7 +1897,7 @@
                 - 7500
     - kind: DataProduct
       id: a0314893-7445-5a8f-b603-d8f07ac25380
-      name: Food Production Operations Analytics
+      name: food_production_operations_analytics
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -1886,6 +1908,8 @@
           value: consumerAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Food Production Operations Analytics
       outputPorts:
         - name: production_efficiency
           version: v1
@@ -2029,7 +2053,7 @@
                 - 92.5
     - kind: DataProduct
       id: 0c2ab542-0864-5294-91ce-cb9614c36391
-      name: Petstore Xnalytics Dashboard Data
+      name: petstore_xnalytics_dashboard_data
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -2040,10 +2064,12 @@
           value: application
         - property: technology
           value: powerbi
+        - property: dataProductBusinessName
+          value: Petstore Xnalytics Dashboard Data
       outputPorts: []
     - kind: DataProduct
       id: c80d0183-3468-5dbe-b7be-9950c7c89e78
-      name: Food Production Analytics Dashboard Data
+      name: food_production_analytics_dashboard_data
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -2054,6 +2080,8 @@
           value: application
         - property: technology
           value: powerbi
+        - property: dataProductBusinessName
+          value: Food Production Analytics Dashboard Data
       outputPorts: []
     - dataUsageAgreementSpecification: 0.0.1
       id: f5930479-ad9d-595e-a854-5d72d6246890
@@ -2243,7 +2271,7 @@
   data:
     - kind: DataProduct
       id: 4c9c60a6-9b7a-559f-9acb-2253b9f27a78
-      name: Petstore X
+      name: petstore_x
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -2254,10 +2282,12 @@
           value: dataSource
         - property: technology
           value: rdsoracle
+        - property: dataProductBusinessName
+          value: Petstore X
       outputPorts: []
     - kind: DataProduct
       id: 30982ac5-326d-5744-915c-63ef5013c46e
-      name: Petstore Y
+      name: petstore_y
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -2268,10 +2298,12 @@
           value: dataSource
         - property: technology
           value: rdsoracle
+        - property: dataProductBusinessName
+          value: Petstore Y
       outputPorts: []
     - kind: DataProduct
       id: b3d406b9-952f-5df4-8ab5-b10c1521d0ad
-      name: Food Production
+      name: food_production
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -2282,10 +2314,12 @@
           value: dataSource
         - property: technology
           value: rdsoracle
+        - property: dataProductBusinessName
+          value: Food Production
       outputPorts: []
     - kind: DataProduct
       id: 128a3c4b-71c6-5929-aa27-c98974544bf4
-      name: Petstore X
+      name: petstore_x
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -2296,6 +2330,8 @@
           value: sourceAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Petstore X
       outputPorts:
         - name: customers
           version: v1
@@ -2664,7 +2700,7 @@
                 - 2024-06-01T08:00:00Z
     - kind: DataProduct
       id: 3297774a-3037-5b64-b0ff-41f6c075f1d6
-      name: Petstore Y
+      name: petstore_y
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -2675,6 +2711,8 @@
           value: sourceAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Petstore Y
       outputPorts:
         - name: customers
           version: v1
@@ -3024,7 +3062,7 @@
                 - 2024-06-01T08:00:00Z
     - kind: DataProduct
       id: f951f3d6-810d-5c6b-89c4-d12c14ba15b0
-      name: Food Production
+      name: food_production
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -3035,6 +3073,8 @@
           value: sourceAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Food Production
       outputPorts:
         - name: food_products
           version: v1
@@ -3327,7 +3367,7 @@
                   query: rating BETWEEN 0 AND 5
     - kind: DataProduct
       id: 7d4e218a-a30a-579d-982d-3e8bea3904a6
-      name: Unified Petstore Retail Data
+      name: unified_petstore_retail_data
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -3338,6 +3378,8 @@
           value: curated
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Unified Petstore Retail Data
       outputPorts:
         - name: unified_customers
           version: v1
@@ -3641,7 +3683,7 @@
                 - CAT-000
     - kind: DataProduct
       id: ac45ad74-3fb6-5b5a-bc1a-edb0968a154f
-      name: Food Production Analytics Data
+      name: food_production_analytics_data
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -3652,6 +3694,8 @@
           value: curated
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Food Production Analytics Data
       outputPorts:
         - name: product_quality
           version: v1
@@ -3876,7 +3920,7 @@
                 - 2000
     - kind: DataProduct
       id: deebe052-0a1d-5d2d-b7f6-53c74cb25282
-      name: Petstore Yusiness Analytics
+      name: petstore_yusiness_analytics
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -3887,6 +3931,8 @@
           value: consumerAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Petstore Yusiness Analytics
       outputPorts:
         - name: sales_metrics
           version: v1
@@ -4073,7 +4119,7 @@
                 - 7500
     - kind: DataProduct
       id: a0314893-7445-5a8f-b603-d8f07ac25380
-      name: Food Production Operations Analytics
+      name: food_production_operations_analytics
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -4084,6 +4130,8 @@
           value: consumerAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Food Production Operations Analytics
       outputPorts:
         - name: production_efficiency
           version: v1
@@ -4227,7 +4275,7 @@
                 - 92.5
     - kind: DataProduct
       id: 0c2ab542-0864-5294-91ce-cb9614c36391
-      name: Petstore Xnalytics Dashboard Data
+      name: petstore_xnalytics_dashboard_data
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -4238,10 +4286,12 @@
           value: application
         - property: technology
           value: powerbi
+        - property: dataProductBusinessName
+          value: Petstore Xnalytics Dashboard Data
       outputPorts: []
     - kind: DataProduct
       id: c80d0183-3468-5dbe-b7be-9950c7c89e78
-      name: Food Production Analytics Dashboard Data
+      name: food_production_analytics_dashboard_data
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -4252,6 +4302,8 @@
           value: application
         - property: technology
           value: powerbi
+        - property: dataProductBusinessName
+          value: Food Production Analytics Dashboard Data
       outputPorts: []
     - dataUsageAgreementSpecification: 0.0.1
       id: f5930479-ad9d-595e-a854-5d72d6246890
@@ -4413,7 +4465,7 @@
   data:
     - kind: DataProduct
       id: 4c9c60a6-9b7a-559f-9acb-2253b9f27a78
-      name: Petstore X
+      name: petstore_x
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -4424,10 +4476,12 @@
           value: dataSource
         - property: technology
           value: rdsoracle
+        - property: dataProductBusinessName
+          value: Petstore X
       outputPorts: []
     - kind: DataProduct
       id: b3d406b9-952f-5df4-8ab5-b10c1521d0ad
-      name: Food Production
+      name: food_production
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -4438,10 +4492,12 @@
           value: dataSource
         - property: technology
           value: rdsoracle
+        - property: dataProductBusinessName
+          value: Food Production
       outputPorts: []
     - kind: DataProduct
       id: 128a3c4b-71c6-5929-aa27-c98974544bf4
-      name: Petstore X
+      name: petstore_x
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -4452,6 +4508,8 @@
           value: sourceAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Petstore X
       outputPorts:
         - name: customers
           version: v1
@@ -5151,7 +5209,7 @@
                 - 2024-06-01T08:00:00Z
     - kind: DataProduct
       id: f951f3d6-810d-5c6b-89c4-d12c14ba15b0
-      name: Food Production
+      name: food_production
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -5162,6 +5220,8 @@
           value: sourceAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Food Production
       outputPorts:
         - name: food_products
           version: v1
@@ -5454,7 +5514,7 @@
                   query: rating BETWEEN 0 AND 5
     - kind: DataProduct
       id: 7d4e218a-a30a-579d-982d-3e8bea3904a6
-      name: Unified Petstore Retail Data
+      name: unified_petstore_retail_data
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -5465,6 +5525,8 @@
           value: curated
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Unified Petstore Retail Data
       outputPorts:
         - name: unified_customers
           version: v1
@@ -5768,7 +5830,7 @@
                 - CAT-000
     - kind: DataProduct
       id: ac45ad74-3fb6-5b5a-bc1a-edb0968a154f
-      name: Food Production Analytics Data
+      name: food_production_analytics_data
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -5779,6 +5841,8 @@
           value: curated
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Food Production Analytics Data
       outputPorts:
         - name: product_quality
           version: v1
@@ -6003,7 +6067,7 @@
                 - 2000
     - kind: DataProduct
       id: deebe052-0a1d-5d2d-b7f6-53c74cb25282
-      name: Petstore Yusiness Analytics
+      name: petstore_yusiness_analytics
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -6014,6 +6078,8 @@
           value: consumerAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Petstore Yusiness Analytics
       outputPorts:
         - name: sales_metrics
           version: v1
@@ -6200,7 +6266,7 @@
                 - 7500
     - kind: DataProduct
       id: a0314893-7445-5a8f-b603-d8f07ac25380
-      name: Food Production Operations Analytics
+      name: food_production_operations_analytics
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -6211,6 +6277,8 @@
           value: consumerAligned
         - property: technology
           value: databricks
+        - property: dataProductBusinessName
+          value: Food Production Operations Analytics
       outputPorts:
         - name: production_efficiency
           version: v1
@@ -6354,7 +6422,7 @@
                 - 92.5
     - kind: DataProduct
       id: 0c2ab542-0864-5294-91ce-cb9614c36391
-      name: Petstore Xnalytics Dashboard Data
+      name: petstore_xnalytics_dashboard_data
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -6365,10 +6433,12 @@
           value: application
         - property: technology
           value: powerbi
+        - property: dataProductBusinessName
+          value: Petstore Xnalytics Dashboard Data
       outputPorts: []
     - kind: DataProduct
       id: c80d0183-3468-5dbe-b7be-9950c7c89e78
-      name: Food Production Analytics Dashboard Data
+      name: food_production_analytics_dashboard_data
       domain: food_production
       status: active
       apiVersion: v1.0.0
@@ -6379,6 +6449,8 @@
           value: application
         - property: technology
           value: powerbi
+        - property: dataProductBusinessName
+          value: Food Production Analytics Dashboard Data
       outputPorts: []
     - dataUsageAgreementSpecification: 0.0.1
       id: f5930479-ad9d-595e-a854-5d72d6246890

@@ -95,6 +95,39 @@ iconMap:
   agent: /icons/robot.svg
   application: /icons/application.svg
 
+technologyNameMap:
+  database: Database
+  oracle: Oracle
+  rdsoracle: RDS Oracle
+  rdsaurora: RDS Aurora
+  rdsmariadb: RDS MariaDB
+  rdsmysql: RDS MySQL
+  rdspostgresql: RDS PostgreSQL
+  rdssqlserver: RDS SQL Server
+  sharepoint: SharePoint
+  reltio: Reltio
+  veevavault: Veeva Vault
+  ftp: FTP
+  salesforce: Salesforce
+  sap: SAP
+  s3: S3
+  redshift: Redshift
+  atlassian: Atlassian
+  jira: Jira
+  googleanalytics: Google Analytics
+  servicenow: ServiceNow
+  databricks: Databricks
+  deltalake: Delta Lake
+  odata: OData
+  snowflake: Snowflake
+  tibco: Tibco
+  tibcodv12n: Tibco
+  api: API
+  iceberg: Iceberg
+  kafka: Kafka
+  kinesis: Kinesis
+  powerbi: Power BI
+
 tiers:
   dataSource:
     label: DATA SOURCE
