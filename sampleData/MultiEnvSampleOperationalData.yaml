@@ -1698,7 +1698,7 @@
                 - 2000
     - kind: DataProduct
       id: deebe052-0a1d-5d2d-b7f6-53c74cb25282
-      name: petstore_yusiness_analytics
+      name: petstore_business_analytics
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -1710,7 +1710,7 @@
         - property: technology
           value: databricks
         - property: dataProductBusinessName
-          value: Petstore Yusiness Analytics
+          value: Petstore Business Analytics
       outputPorts:
         - name: sales_metrics
           version: v1
@@ -2053,7 +2053,7 @@
                 - 92.5
     - kind: DataProduct
       id: 0c2ab542-0864-5294-91ce-cb9614c36391
-      name: petstore_xnalytics_dashboard_data
+      name: petstore_analytics_dashboard_data
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -2065,7 +2065,7 @@
         - property: technology
           value: powerbi
         - property: dataProductBusinessName
-          value: Petstore Xnalytics Dashboard Data
+          value: Petstore Analytics Dashboard Data
       outputPorts: []
     - kind: DataProduct
       id: c80d0183-3468-5dbe-b7be-9950c7c89e78
@@ -3920,7 +3920,7 @@
                 - 2000
     - kind: DataProduct
       id: deebe052-0a1d-5d2d-b7f6-53c74cb25282
-      name: petstore_yusiness_analytics
+      name: petstore_business_analytics
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -3932,7 +3932,7 @@
         - property: technology
           value: databricks
         - property: dataProductBusinessName
-          value: Petstore Yusiness Analytics
+          value: Petstore Business Analytics
       outputPorts:
         - name: sales_metrics
           version: v1
@@ -4275,7 +4275,7 @@
                 - 92.5
     - kind: DataProduct
       id: 0c2ab542-0864-5294-91ce-cb9614c36391
-      name: petstore_xnalytics_dashboard_data
+      name: petstore_analytics_dashboard_data
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -4287,7 +4287,7 @@
         - property: technology
           value: powerbi
         - property: dataProductBusinessName
-          value: Petstore Xnalytics Dashboard Data
+          value: Petstore Analytics Dashboard Data
       outputPorts: []
     - kind: DataProduct
       id: c80d0183-3468-5dbe-b7be-9950c7c89e78
@@ -6067,7 +6067,7 @@
                 - 2000
     - kind: DataProduct
       id: deebe052-0a1d-5d2d-b7f6-53c74cb25282
-      name: petstore_yusiness_analytics
+      name: petstore_business_analytics
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -6079,7 +6079,7 @@
         - property: technology
           value: databricks
         - property: dataProductBusinessName
-          value: Petstore Yusiness Analytics
+          value: Petstore Business Analytics
       outputPorts:
         - name: sales_metrics
           version: v1
@@ -6422,7 +6422,7 @@
                 - 92.5
     - kind: DataProduct
       id: 0c2ab542-0864-5294-91ce-cb9614c36391
-      name: petstore_xnalytics_dashboard_data
+      name: petstore_analytics_dashboard_data
       domain: petstore
       status: active
       apiVersion: v1.0.0
@@ -6434,7 +6434,7 @@
         - property: technology
           value: powerbi
         - property: dataProductBusinessName
-          value: Petstore Xnalytics Dashboard Data
+          value: Petstore Analytics Dashboard Data
       outputPorts: []
     - kind: DataProduct
       id: c80d0183-3468-5dbe-b7be-9950c7c89e78
