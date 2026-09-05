@@ -19,6 +19,8 @@
 
   /* Primary Theme Color */
   --primary-main: #ff5500;
+  --link-color: #ffffff;
+  --link-hover-color: #cccccc;
 
   /* React Flow Overrides */
   --xy-background-color: #141414;

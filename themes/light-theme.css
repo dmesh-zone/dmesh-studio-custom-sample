@@ -19,6 +19,8 @@
 
   /* Primary Theme Color */
   --primary-main: #ff5500;
+  --link-color: #000000;
+  --link-hover-color: #333333;
 
   /* Button Base */
   --button-radius: 4px;
