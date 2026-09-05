@@ -38,7 +38,7 @@ export default function Page() {
                             { label: 'Consumer Aligned', count: consumerAligned },
                         ].map((item, idx) => (
                             <Paper key={idx} sx={{ flex: 1, p: 2, textAlign: 'center', borderRadius: 2, border: '1px solid var(--m3-outline-variant, #e2e8f0)', boxShadow: 'none' }}>
-                                <Typography variant="h4" sx={{ fontWeight: 'bold', color: 'black' }}>
+                                <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
                                     {item.count}
                                 </Typography>
                                 <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 0.5 }}>
