@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Paper, Typography } from '@mui/material';
-import DataProductTabular from '../../../components/DataProductTabular';
+import DataProductTabular from '../../../components/base/DataProductTabular';
 
 export default function Page() {
     const tableDescriptor = [

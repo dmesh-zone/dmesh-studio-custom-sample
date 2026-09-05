@@ -1,5 +1,5 @@
 import React from 'react';
-import DataProductTabular from '../../../components/DataProductTabular';
+import DataProductTabular from '../../../components/base/DataProductTabular';
 
 export default function Page() {
     const tableDescriptor = [
