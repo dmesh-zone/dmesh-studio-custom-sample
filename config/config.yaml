@@ -8,6 +8,11 @@ multi-environment: ["Dev", "QA", "Prod"]
 single-domain-default-filter: False
 # zoom-to-fit-columns: False
 
+dataMeshBreadcrumbDataProductAliasMap:
+  "dataSource": "Data Source"
+  "application": "Application"
+  "*": "Data Product"
+
 theme: custom
 
 navigation:
