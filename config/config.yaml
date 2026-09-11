@@ -21,7 +21,7 @@ navigation:
       pages:
         - id: "mesh"
           title: "Data Mesh"
-          icon: "Hub"
+          icon: "CustomMesh"
           component: "DataMesh"
         - id: "products"
           title: "Data Products"
