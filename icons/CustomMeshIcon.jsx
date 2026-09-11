@@ -1,6 +1,9 @@
 import React from 'react';
 import { SvgIcon } from '@mui/material';
 
+// This custom icon is mapped in config.yaml under the navigation sections.
+// Note: It is referenced simply as `icon: "CustomMesh"` in the config. 
+// The custom icon resolver automatically appends the "Icon" suffix to match this file name.
 export default function CustomMeshIcon(props) {
   return (
     <SvgIcon {...props}>
