@@ -12,98 +12,12 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Box, Typography, Paper, CircularProgress, RadioGroup, FormControlLabel, Radio, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination, TableSortLabel, Alert } from '@mui/material';
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import OperationalData from '../../services/OperationalData';
-import DomainSelector from '../../DomainSelector';
+import DomainSelectorWidget from '../../components/base/DomainSelectorWidget';
+import EnvironmentSelectorWidget from '../../components/base/EnvironmentSelectorWidget';
+import DataProductTypeSelectorWidget, { formatType } from '../../components/base/DataProductTypeSelectorWidget';
+import DataProductSearchWidget from '../../components/base/DataProductSearchWidget';
 import { useThemeContext } from '../../ThemeContext';
 import { resolveOdpsPath } from '../../utils/odpsPath';
-
-// Lifted generic formatter from DataProductTabular
-export const formatType = (type: string) => {
-    if (!type) return '';
-    return type
-        .replace(/([A-Z])/g, ' $1')
-        .replace(/^./, str => str.toUpperCase())
-        .trim();
-};
-
-const TypeSelector = ({ types, selectedTypes, onChange }: any) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const containerRef = React.useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const handleClickOutside = (event: any) => {
-            if (containerRef.current && !containerRef.current.contains(event.target)) {
-                setIsOpen(false);
-            }
-        };
-        document.addEventListener('mousedown', handleClickOutside, true);
-        return () => document.removeEventListener('mousedown', handleClickOutside, true);
-    }, []);
-
-    const toggleType = (type: string) => {
-        if (selectedTypes.includes(type)) {
-            onChange(selectedTypes.filter((t: string) => t !== type));
-        } else {
-            onChange([...selectedTypes, type]);
-        }
-    };
-
-    const labelText = selectedTypes.length === 0
-        ? 'All Types'
-        : selectedTypes.length === types.length
-            ? 'All Types'
-            : selectedTypes.length === 1
-                ? formatType(selectedTypes[0])
-                : `${selectedTypes.length} Types`;
-
-    return (
-        <div ref={containerRef} style={{ position: 'relative' }}>
-            <div
-                className="input-container-style"
-                onClick={() => setIsOpen(!isOpen)}
-                style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '6px 10px',
-                    cursor: 'pointer',
-                    minWidth: '150px',
-                    userSelect: 'none'
-                }}
-            >
-                <span style={{ fontSize: '13px', color: 'var(--m3-on-surface, #334155)', flex: 1 }}>{labelText}</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-            </div>
-
-            {isOpen && (
-                <div style={{
-                    position: 'absolute', top: '100%', left: 0, marginTop: '4px', zIndex: 20,
-                    backgroundColor: 'var(--input-bg, #ffffff)', padding: '10px', borderRadius: '8px',
-                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                    border: '1px solid var(--m3-outline-variant, #e2e8f0)', display: 'flex', flexDirection: 'column', gap: '5px',
-                    minWidth: '200px', maxHeight: '60vh', overflowY: 'auto'
-                }}>
-                    <label style={{ fontSize: '12px', fontWeight: '600', color: 'var(--m3-outline, #64748b)', marginBottom: '4px' }}>Select Types</label>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                        {types.map((type: string) => (
-                            <label key={type} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', cursor: 'pointer', whiteSpace: 'nowrap', padding: '2px 0', color: 'var(--m3-on-surface, #334155)' }}>
-                                <input type="checkbox" checked={selectedTypes.includes(type)} onChange={() => toggleType(type)} style={{ cursor: 'pointer' }} />
-                                {formatType(type)}
-                            </label>
-                        ))}
-                    </div>
-                    <div style={{ display: 'flex', gap: '5px', marginTop: '8px', paddingTop: '8px', borderTop: '1px solid var(--m3-surface-variant, #f1f5f9)' }}>
-                        <button className="btn btn-secondary" onClick={() => onChange(types)} style={{ flex: 1, fontSize: '11px', padding: '4px 8px' }}>Select All</button>
-                        <button className="btn btn-secondary" onClick={() => onChange([])} style={{ flex: 1, fontSize: '11px', padding: '4px 8px' }}>Clear</button>
-                    </div>
-                </div>
-            )}
-        </div>
-    );
-};
-
-
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d', '#ffc658'];
 
@@ -124,6 +38,7 @@ export default function DataProductCostDashboard() {
     const [envFilter, setEnvFilter] = useState('All');
     const [selectedDomains, setSelectedDomains] = useState<string[]>([]);
     const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+    const [searchText, setSearchText] = useState('');
     const [domainNameCustomisation, setDomainNameCustomisation] = useState<Record<string, string>>({});
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -221,9 +136,18 @@ export default function DataProductCostDashboard() {
             if (selectedTypes.length > 0 && !selectedTypes.includes(prod.type)) {
                 return false;
             }
+            if (searchText) {
+                const query = searchText.toLowerCase();
+                const matchesName = prod.name && prod.name.toLowerCase().includes(query);
+                const matchesDomain = prod.domain && prod.domain.toLowerCase().includes(query);
+                const matchesType = prod.type && prod.type.toLowerCase().includes(query);
+                if (!matchesName && !matchesDomain && !matchesType) {
+                    return false;
+                }
+            }
             return true;
         });
-    }, [products, envFilter, selectedDomains, selectedTypes]);
+    }, [products, envFilter, selectedDomains, selectedTypes, searchText]);
 
     /**
      * Compute Metrics:
@@ -311,31 +235,15 @@ export default function DataProductCostDashboard() {
 
             {/* Filter Controls */}
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center', mb: 4 }}>
-                {/* Environment Selector */}
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, bgcolor: mode === 'dark' ? '#1e293b' : '#ffffff', px: 2, py: '2px', borderRadius: '8px', border: '1px solid', borderColor: 'divider', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', height: '32px' }}>
-                    <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 'bold', mr: 0.5 }}>
-                        Environment:
-                    </Typography>
-                    <RadioGroup row value={envFilter} onChange={(e) => setEnvFilter(e.target.value)} sx={{ gap: 0.5, flexWrap: 'nowrap' }}>
-                        {environments.map((env) => (
-                            <FormControlLabel key={env} value={env}
-                                control={<Radio size="small"
-                                    icon={<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" stroke="var(--radio-border, #64748b)" strokeWidth="2" /></svg>}
-                                    checkedIcon={<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" stroke="var(--radio-selected-border, #111111)" strokeWidth="2.5" /><circle cx="12" cy="12" r="4" fill="var(--radio-selected-dot, #111111)" /></svg>}
-                                    sx={{ padding: '2px', '&.Mui-focusVisible': { outline: '2px solid #ff5500', outlineOffset: '2px' } }}
-                                />}
-                                label={env}
-                                sx={{ margin: 0, '& .MuiFormControlLabel-label': { fontSize: '0.75rem', color: 'text.primary', pr: 0.5 } }}
-                            />
-                        ))}
-                    </RadioGroup>
-                </Box>
+                <EnvironmentSelectorWidget environments={environments} envFilter={envFilter} setEnvFilter={setEnvFilter} mode={mode} />
 
-                <DomainSelector domains={allDomains} selectedDomains={selectedDomains} onChange={setSelectedDomains} formatDomain={formatDomain} />
+                <DomainSelectorWidget domains={allDomains} selectedDomains={selectedDomains} onChange={setSelectedDomains} formatDomain={formatDomain} />
 
                 {allTypes.length > 1 && (
-                    <TypeSelector types={allTypes} selectedTypes={selectedTypes} onChange={setSelectedTypes} />
+                    <DataProductTypeSelectorWidget types={allTypes} selectedTypes={selectedTypes} onChange={setSelectedTypes} />
                 )}
+
+                <DataProductSearchWidget filterText={searchText} onFilterChange={setSearchText} />
             </Box>
 
             {/* Top Row: Total Cost */}
