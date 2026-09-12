@@ -35,6 +35,10 @@ navigation:
           title: "Applications"
           icon: "WebAsset"
           component: "Applications"
+        - id: "cost"
+          title: "Cost Management"
+          icon: "MonetizationOn"
+          component: "CostManagement"
     - name: ""
       pages:
         - id: "about"

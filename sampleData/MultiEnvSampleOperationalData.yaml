@@ -14,7 +14,7 @@
         - property: technology
           value: rdsoracle
         - property: dataProductBusinessName
-          value: Petstore X
+          value: Petstore X data source
       outputPorts: []
     - kind: DataProduct
       id: 30982ac5-326d-5744-915c-63ef5013c46e
@@ -30,7 +30,7 @@
         - property: technology
           value: rdsoracle
         - property: dataProductBusinessName
-          value: Petstore Y
+          value: Petstore Y data source
       outputPorts: []
     - kind: DataProduct
       id: a538c642-e1d5-4c07-9e79-e31be0bd295c
@@ -46,7 +46,7 @@
         - property: technology
           value: rdsoracle
         - property: dataProductBusinessName
-          value: Petstore Z
+          value: Petstore Z data source
       outputPorts: []
     - kind: DataProduct
       id: b3d406b9-952f-5df4-8ab5-b10c1521d0ad
@@ -62,7 +62,7 @@
         - property: technology
           value: rdsoracle
         - property: dataProductBusinessName
-          value: Food Production
+          value: Food Production data source
       outputPorts: []
     - kind: DataProduct
       id: 128a3c4b-71c6-5929-aa27-c98974544bf4
@@ -2283,7 +2283,7 @@
         - property: technology
           value: rdsoracle
         - property: dataProductBusinessName
-          value: Petstore X
+          value: Petstore X data source
       outputPorts: []
     - kind: DataProduct
       id: 30982ac5-326d-5744-915c-63ef5013c46e
@@ -2299,7 +2299,7 @@
         - property: technology
           value: rdsoracle
         - property: dataProductBusinessName
-          value: Petstore Y
+          value: Petstore Y data store
       outputPorts: []
     - kind: DataProduct
       id: b3d406b9-952f-5df4-8ab5-b10c1521d0ad
@@ -2315,7 +2315,7 @@
         - property: technology
           value: rdsoracle
         - property: dataProductBusinessName
-          value: Food Production
+          value: Food Production data source
       outputPorts: []
     - kind: DataProduct
       id: 128a3c4b-71c6-5929-aa27-c98974544bf4
@@ -4477,7 +4477,7 @@
         - property: technology
           value: rdsoracle
         - property: dataProductBusinessName
-          value: Petstore X
+          value: Petstore X data source
       outputPorts: []
     - kind: DataProduct
       id: b3d406b9-952f-5df4-8ab5-b10c1521d0ad
@@ -4493,7 +4493,7 @@
         - property: technology
           value: rdsoracle
         - property: dataProductBusinessName
-          value: Food Production
+          value: Food Production data source
       outputPorts: []
     - kind: DataProduct
       id: 128a3c4b-71c6-5929-aa27-c98974544bf4
