@@ -21,6 +21,8 @@
   --primary-main: #ff5500;
   --link-color: #ffffff;
   --link-hover-color: #cccccc;
+  --tooltip-bg: #ffffff;
+  --tooltip-text: #000000;
 
   /* React Flow Overrides */
   --xy-background-color: #141414;
