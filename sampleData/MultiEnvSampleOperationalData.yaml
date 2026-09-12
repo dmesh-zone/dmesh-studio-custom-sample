@@ -2299,7 +2299,7 @@
         - property: technology
           value: rdsoracle
         - property: dataProductBusinessName
-          value: Petstore Y data store
+          value: Petstore Y data source
       outputPorts: []
     - kind: DataProduct
       id: b3d406b9-952f-5df4-8ab5-b10c1521d0ad

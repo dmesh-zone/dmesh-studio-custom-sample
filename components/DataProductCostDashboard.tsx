@@ -150,7 +150,9 @@ export default function DataProductCostDashboard() {
             }
             if (searchText) {
                 const query = searchText.toLowerCase();
-                const matchesName = prod.name && prod.name.toLowerCase().includes(query);
+                const businessName = resolveOdpsPath(prod, '_customProperty("dataProductBusinessName")');
+                const nameToSearch = businessName || prod.name || prod.id;
+                const matchesName = nameToSearch && String(nameToSearch).toLowerCase().includes(query);
                 const matchesDomain = prod.domain && prod.domain.toLowerCase().includes(query);
                 const matchesType = prod.type && prod.type.toLowerCase().includes(query);
                 if (!matchesName && !matchesDomain && !matchesType) {
