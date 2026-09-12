@@ -9,6 +9,7 @@
  * - A sortable, paginated data table showing line-item costs
  */
 import React, { useState, useEffect, useMemo } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Box, Typography, Paper, CircularProgress, RadioGroup, FormControlLabel, Radio, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination, TableSortLabel, Alert } from '@mui/material';
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import OperationalData from '../../services/OperationalData';
@@ -27,6 +28,8 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d'
  */
 export default function DataProductCostDashboard() {
     const { mode } = useThemeContext();
+    const navigate = useNavigate();
+    const location = useLocation();
     const [isLoading, setIsLoading] = useState(true);
     const [products, setProducts] = useState<any[]>([]);
     const [costs, setCosts] = useState<Record<string, number>>({});
@@ -120,8 +123,17 @@ export default function DataProductCostDashboard() {
     useEffect(() => {
         if (envFilter && envFilter !== 'All') {
             localStorage.setItem('dmesh-selected-env', envFilter);
+
+            const parts = location.pathname.split('/').filter(Boolean);
+            if (parts[0] === 'env' && parts.length >= 2) {
+                const urlEnv = parts[1];
+                if (urlEnv !== envFilter) {
+                    const newPath = `/${parts[0]}/${envFilter}/${parts.slice(2).join('/')}`;
+                    navigate(newPath, { replace: true });
+                }
+            }
         }
-    }, [envFilter]);
+    }, [envFilter, location.pathname, navigate]);
 
     // Apply Filters
     const filteredProducts = useMemo(() => {
@@ -225,9 +237,9 @@ export default function DataProductCostDashboard() {
     }
 
     return (
-        <Box sx={{ p: 3, maxWidth: 1200, margin: '0 auto', fontFamily: 'var(--font-family, inherit)', height: '100%', overflowY: 'auto' }}>
+        <Box sx={{ pt: 1.5, pb: 4, px: 4, fontFamily: 'var(--font-family, inherit)', height: '100%', overflowY: 'auto', bgcolor: 'var(--m3-surface, #ffffff)', color: 'var(--m3-on-surface, #334155)' }}>
 
-            <Typography variant="h4" sx={{ mb: 3, fontWeight: 'bold' }}>Cost Management Dashboard</Typography>
+            <Typography variant="h5" sx={{ mb: 3, fontWeight: 'bold', color: 'inherit' }}>Cost Management Dashboard</Typography>
 
             <Alert severity="warning" sx={{ mb: 3 }}>
                 This page illustrates how custom components can be used
@@ -247,9 +259,9 @@ export default function DataProductCostDashboard() {
             </Box>
 
             {/* Top Row: Total Cost */}
-            <Paper sx={{ p: 3, mb: 4, textAlign: 'center', borderRadius: 2, bgcolor: 'var(--m3-primary-container, #e0f2fe)' }}>
+            <Paper sx={{ p: 3, mb: 4, textAlign: 'center', borderRadius: 2, bgcolor: 'background.paper', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
                 <Typography variant="h6" color="text.secondary">Total Cost</Typography>
-                <Typography variant="h3" sx={{ fontWeight: 'bold', color: 'var(--m3-on-primary-container, #0369a1)' }}>
+                <Typography variant="h3" color="primary" sx={{ fontWeight: 'bold' }}>
                     ${totalCost.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
                 </Typography>
             </Paper>
