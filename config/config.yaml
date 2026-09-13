@@ -15,6 +15,12 @@ dataMeshBreadcrumbDataProductAliasMap:
 
 theme: custom
 
+app:
+  services:
+    costManagementService: "https://example.com/cost-management"
+  features:
+    customUserFeatureFlag: true
+
 navigation:
   sections:
     - name: "Explore"
@@ -41,6 +47,10 @@ navigation:
           component: "CostManagement"
     - name: ""
       pages:
+        - id: "state-demo"
+          title: "State Demo"
+          icon: "Science"
+          component: "StateDemo"
         - id: "about"
           title: "About"
           icon: "Article"
