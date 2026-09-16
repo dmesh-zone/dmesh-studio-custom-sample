@@ -1,6 +1,4 @@
-# default config.yaml can be overridden by customConfig.yaml
-# defaultDataMeshOperationalDataUrl: http://localhost:8000/dmesh/discover
-# defaultDataMeshOperationalDataUrl: /DataMeshOperationalDataPetsExample.yaml
+# defaultDataMeshOperationalDataUrl: http://localhost:8000/dmesh/discover-multi-environment
 defaultDataMeshOperationalDataUrl: /sampleData/custom/MultiEnvSampleOperationalData.yaml
 multi-environment: ["Dev", "QA", "Prod"]
 # default-environment: "Prod"
