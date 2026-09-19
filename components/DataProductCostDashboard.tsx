@@ -39,9 +39,29 @@ export default function DataProductCostDashboard() {
 
     // Filters
     const [envFilter, setEnvFilter] = useState('All');
-    const [selectedDomains, setSelectedDomains] = useState<string[]>([]);
-    const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-    const [searchText, setSearchText] = useState('');
+    const [selectedDomains, setSelectedDomains] = useState<string[]>(() => {
+        try {
+            const urlDomains = new URLSearchParams(location.search).get('domains');
+            if (urlDomains !== null) {
+                return (urlDomains && urlDomains !== '*') ? urlDomains.split(',') : [];
+            }
+            const stored = localStorage.getItem('dmesh-selected-domains');
+            return stored ? JSON.parse(stored) : [];
+        } catch { return []; }
+    });
+    const [selectedTypes, setSelectedTypes] = useState<string[]>(() => {
+        try {
+            const urlTypes = new URLSearchParams(location.search).get('types');
+            if (urlTypes !== null) {
+                return (urlTypes && urlTypes !== '*') ? urlTypes.split(',') : [];
+            }
+            const stored = localStorage.getItem('dmesh-selected-types');
+            return stored ? JSON.parse(stored) : [];
+        } catch { return []; }
+    });
+    const [searchText, setSearchText] = useState(() => {
+        return new URLSearchParams(location.search).get('search') || '';
+    });
     const [domainNameCustomisation, setDomainNameCustomisation] = useState<Record<string, string>>({});
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -70,18 +90,7 @@ export default function DataProductCostDashboard() {
                 const envToSet = storedEnv && data.environments.includes(storedEnv) ? storedEnv : defaultEnv;
                 setEnvFilter(envToSet);
 
-                // Initialize Domain from localStorage
-                const savedDomains = localStorage.getItem('dmesh-selected-domains');
-                if (savedDomains && data.domains.length > 0) {
-                    try {
-                        const parsed = JSON.parse(savedDomains);
-                        if (Array.isArray(parsed) && parsed.every(d => data.domains.includes(d))) {
-                            setSelectedDomains(parsed);
-                        }
-                    } catch (e) {
-                        console.error("Failed to parse saved domains", e);
-                    }
-                }
+                // Domain from localStorage is now handled in useState directly
 
                 // Load Custom CSV Cost Data
                 const csvRes = await fetch(`${import.meta.env.BASE_URL}sampleData/base/PetsDataProductCost.csv?t=${Date.now()}`);
@@ -111,29 +120,74 @@ export default function DataProductCostDashboard() {
         load();
     }, []);
 
-    // Effect to sync domains with localStorage
+    // Local Storage & URL Sync
     useEffect(() => {
+        if (envFilter && envFilter !== 'All') {
+            localStorage.setItem('dmesh-selected-env', envFilter);
+        }
         if (selectedDomains.length > 0) {
             localStorage.setItem('dmesh-selected-domains', JSON.stringify(selectedDomains));
         } else if (allDomains.length > 0) {
             localStorage.removeItem('dmesh-selected-domains');
         }
-    }, [selectedDomains, allDomains]);
-
-    useEffect(() => {
-        if (envFilter && envFilter !== 'All') {
-            localStorage.setItem('dmesh-selected-env', envFilter);
-
-            const parts = location.pathname.split('/').filter(Boolean);
-            if (parts[0] === 'env' && parts.length >= 2) {
-                const urlEnv = parts[1];
-                if (urlEnv !== envFilter) {
-                    const newPath = `/${parts[0]}/${envFilter}/${parts.slice(2).join('/')}`;
-                    navigate(newPath, { replace: true });
-                }
-            }
+        if (selectedTypes.length > 0) {
+            localStorage.setItem('dmesh-selected-types', JSON.stringify(selectedTypes));
+        } else if (allTypes.length > 0) {
+            localStorage.removeItem('dmesh-selected-types');
         }
-    }, [envFilter, location.pathname, navigate]);
+            
+        const searchParams = new URLSearchParams(location.search);
+        let paramsChanged = false;
+
+        const currentEnv = searchParams.get('env');
+        if (envFilter && envFilter !== 'All' && currentEnv !== envFilter) {
+            searchParams.set('env', envFilter);
+            paramsChanged = true;
+        }
+
+        const currentDomains = searchParams.get('domains') || '';
+        const expectedDomains = (selectedDomains.length === 0 || (allDomains.length > 0 && selectedDomains.length === allDomains.length)) 
+            ? '*' 
+            : selectedDomains.join(',');
+
+        if (currentDomains !== expectedDomains) {
+            if (expectedDomains && expectedDomains !== '*') searchParams.set('domains', expectedDomains);
+            else if (expectedDomains === '*') searchParams.set('domains', '*');
+            else searchParams.delete('domains');
+            paramsChanged = true;
+        }
+
+        const currentTypes = searchParams.get('types') || '';
+        const expectedTypes = (selectedTypes.length === 0 || (allTypes.length > 0 && selectedTypes.length === allTypes.length)) 
+            ? '*' 
+            : selectedTypes.join(',');
+
+        if (currentTypes !== expectedTypes) {
+            if (expectedTypes && expectedTypes !== '*') searchParams.set('types', expectedTypes);
+            else if (expectedTypes === '*') searchParams.set('types', '*');
+            else searchParams.delete('types');
+            paramsChanged = true;
+        }
+
+        const currentSearch = searchParams.get('search') || '';
+        if (currentSearch !== searchText) {
+            if (searchText) searchParams.set('search', searchText);
+            else searchParams.delete('search');
+            paramsChanged = true;
+        }
+
+        let searchStr = searchParams.toString();
+        if (paramsChanged && searchStr) {
+            const order: Record<string, number> = { env: 1, domains: 2, types: 3, search: 4 };
+            const entries = Array.from(searchParams.entries());
+            entries.sort((a, b) => (order[a[0]] || 99) - (order[b[0]] || 99));
+            searchStr = new URLSearchParams(entries).toString();
+        }
+
+        if (paramsChanged) {
+            navigate(`${location.pathname}?${searchStr}`, { replace: true });
+        }
+    }, [envFilter, selectedDomains, selectedTypes, searchText, allDomains, allTypes, location.pathname, location.search, navigate]);
 
     // Apply Filters
     const filteredProducts = useMemo(() => {
