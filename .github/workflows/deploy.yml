@@ -37,6 +37,7 @@ jobs:
         with:
           repository: dmesh-zone/dmesh-studio
           path: dmesh-studio
+          ref: v4.0.0
 
       - name: Set up Node
         uses: actions/setup-node@v4
