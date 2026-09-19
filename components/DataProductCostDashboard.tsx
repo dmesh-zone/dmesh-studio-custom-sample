@@ -295,24 +295,22 @@ export default function DataProductCostDashboard() {
     return (
         <Box sx={{ pt: 1.5, pb: 4, px: 4, fontFamily: 'var(--font-family, inherit)', height: '100%', overflowY: 'auto', bgcolor: 'var(--m3-surface, #ffffff)', color: 'var(--m3-on-surface, #334155)' }}>
 
-            <Typography variant="h5" sx={{ mb: 3, fontWeight: 'bold', color: 'inherit' }}>Cost Management Dashboard</Typography>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+                <Typography variant="h5" sx={{ fontWeight: 'bold', color: 'inherit' }}>Cost Management Dashboard</Typography>
+
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center' }}>
+                    <EnvironmentSelectorWidget environments={environments} envFilter={envFilter} setEnvFilter={setEnvFilter} mode={mode} />
+                    <DomainSelectorWidget domains={allDomains} selectedDomains={selectedDomains} onChange={setSelectedDomains} formatDomain={formatDomain} />
+                    {allTypes.length > 1 && (
+                        <DataProductTypeSelectorWidget types={allTypes} selectedTypes={selectedTypes} onChange={setSelectedTypes} />
+                    )}
+                    <DataProductSearchWidget filterText={searchText} onFilterChange={setSearchText} />
+                </Box>
+            </Box>
 
             <Alert severity="warning" sx={{ mb: 3 }}>
                 This page illustrates how custom components can be used
             </Alert>
-
-            {/* Filter Controls */}
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center', mb: 4 }}>
-                <EnvironmentSelectorWidget environments={environments} envFilter={envFilter} setEnvFilter={setEnvFilter} mode={mode} />
-
-                <DomainSelectorWidget domains={allDomains} selectedDomains={selectedDomains} onChange={setSelectedDomains} formatDomain={formatDomain} />
-
-                {allTypes.length > 1 && (
-                    <DataProductTypeSelectorWidget types={allTypes} selectedTypes={selectedTypes} onChange={setSelectedTypes} />
-                )}
-
-                <DataProductSearchWidget filterText={searchText} onFilterChange={setSearchText} />
-            </Box>
 
             {/* Top Row: Total Cost */}
             <Paper sx={{ p: 3, mb: 4, textAlign: 'center', borderRadius: 2, bgcolor: 'background.paper', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
