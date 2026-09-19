@@ -1,21 +1,21 @@
 @font-face {
-  font-family: "Outfit";
+  font-family: "OutfitRegular";
   src: url("../../fonts/custom/Outfit-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Outfit";
+  font-family: "OutfitHeading";
   src: url("../../fonts/custom/Outfit-Bold.otf") format("opentype");
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
 }
 
 :root[data-theme="dark"] {
   /* Typography - Custom WOFF font */
-  --font-family: "Outfit", "Roboto", "Helvetica", "Arial", sans-serif !important;
-  --font-family-heading: "Outfit", "Roboto", "Helvetica", "Arial", sans-serif !important;
+  --font-family: "OutfitRegular", "Roboto", "Helvetica", "Arial", sans-serif !important;
+  --font-family-heading: "OutfitHeading", "Roboto", "Helvetica", "Arial", sans-serif !important;
 
   /* Primary Theme Color */
   --primary-main: #ff5500;
