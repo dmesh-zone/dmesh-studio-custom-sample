@@ -43,6 +43,10 @@ navigation:
           title: "Cost Management"
           icon: "MonetizationOn"
           component: "CostManagement"
+        - id: "architecture-fitness"
+          title: "Architecture Fitness"
+          icon: "Rule"
+          component: "ArchitectureFitness"
     - name: ""
       pages:
         - id: "state-demo"
