@@ -177,14 +177,14 @@ observability:
       aggregation:
         type: count
         criteria:
-          dataProductTier: ["source", "dataSource"]
+          type: ["dataSource"]
     dataProducts:
       name: "Data Products"
       visible: true
       aggregation:
         type: count
         criteria:
-          dataProductTier: ["sourceAligned", "curated", "consumerAligned"]
+          type: ["sourceAligned", "curated", "consumerAligned"]
     outputPorts:
       name: "Output ports"
       visible: true
@@ -198,7 +198,7 @@ observability:
         type: sumMetric
         metric: "dpPipelineRecordsProcessed"
         criteria:
-          dataProductTier: ["sourceAligned"]
+          type: ["sourceAligned"]
     recordsProcessed:
       name: "Records Processed"
       visible: true
@@ -206,14 +206,14 @@ observability:
         type: sumMetric
         metric: "dpPipelineRecordsProcessed"
         criteria:
-          dataProductTier: ["curated", "consumerAligned"]
+          type: ["curated", "consumerAligned"]
     consumingApplication:
       name: "Consuming applications"
       visible: true
       aggregation:
         type: count
         criteria:
-          dataProductTier: ["source", "application"]
+          type: ["application"]
   dimensions:
     Pipeline:
       icon: "▸"

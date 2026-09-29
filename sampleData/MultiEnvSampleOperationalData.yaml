@@ -8,9 +8,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Operational Oracle database for Petstore A retail operations
-    customProperties:
-    - property: dataProductTier
-      value: dataSource
+    type: dataSource
     - property: technology
       value: rdsoracle
     - property: dataProductBusinessName
@@ -63,9 +61,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Operational Oracle database for Petstore B retail operations
-    customProperties:
-    - property: dataProductTier
-      value: dataSource
+    type: dataSource
     - property: technology
       value: rdsoracle
     - property: dataProductBusinessName
@@ -106,9 +102,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Operational Oracle database for Petstore C retail operations
-    customProperties:
-    - property: dataProductTier
-      value: dataSource
+    type: dataSource
     - property: technology
       value: rdsoracle
     - property: dataProductBusinessName
@@ -137,9 +131,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Operational Oracle database for Pet food manufacturing
-    customProperties:
-    - property: dataProductTier
-      value: dataSource
+    type: dataSource
     - property: technology
       value: rdsoracle
     - property: dataProductBusinessName
@@ -192,9 +184,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Source-aligned data from Petstore A operational database
-    customProperties:
-    - property: dataProductTier
-      value: sourceAligned
+    type: sourceAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -618,9 +608,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Source-aligned data from Petstore B operational database
-    customProperties:
-    - property: dataProductTier
-      value: sourceAligned
+    type: sourceAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -1032,9 +1020,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Source-aligned data from Petstore C operational database
-    customProperties:
-    - property: dataProductTier
-      value: sourceAligned
+    type: sourceAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -1078,9 +1064,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Source-aligned data from food production operational database
-    customProperties:
-    - property: dataProductTier
-      value: sourceAligned
+    type: sourceAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -1486,9 +1470,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Harmonized and integrated retail data from both petstores
-    customProperties:
-    - property: dataProductTier
-      value: curated
+    type: curated
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -1879,9 +1861,7 @@
     description:
       purpose: Curated food production data with quality metrics and performance
         indicators
-    customProperties:
-    - property: dataProductTier
-      value: curated
+    type: curated
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -2192,9 +2172,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Pre-aggregated analytics for business intelligence and dashboards
-    customProperties:
-    - property: dataProductTier
-      value: consumerAligned
+    type: consumerAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -2461,9 +2439,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Pre-aggregated operations metrics for production dashboards
-    customProperties:
-    - property: dataProductTier
-      value: consumerAligned
+    type: consumerAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -2681,9 +2657,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Power BI dashboards for petstore business intelligence
-    customProperties:
-    - property: dataProductTier
-      value: application
+    type: application
     - property: technology
       value: powerbi
     - property: dataProductBusinessName
@@ -2698,9 +2672,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Power BI dashboards for food production analytics
-    customProperties:
-    - property: dataProductTier
-      value: application
+    type: application
     - property: technology
       value: powerbi
     - property: dataProductBusinessName
@@ -2902,9 +2874,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Operational Oracle database for Petstore A retail operations
-    customProperties:
-    - property: dataProductTier
-      value: dataSource
+    type: dataSource
     - property: technology
       value: rdsoracle
     - property: dataProductBusinessName
@@ -2957,9 +2927,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Operational Oracle database for Petstore B retail operations
-    customProperties:
-    - property: dataProductTier
-      value: dataSource
+    type: dataSource
     - property: technology
       value: rdsoracle
     - property: dataProductBusinessName
@@ -3000,9 +2968,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Operational Oracle database for Pet food manufacturing
-    customProperties:
-    - property: dataProductTier
-      value: dataSource
+    type: dataSource
     - property: technology
       value: rdsoracle
     - property: dataProductBusinessName
@@ -3055,9 +3021,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Source-aligned data from Petstore A operational database
-    customProperties:
-    - property: dataProductTier
-      value: sourceAligned
+    type: sourceAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -3481,9 +3445,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Source-aligned data from Petstore B operational database
-    customProperties:
-    - property: dataProductTier
-      value: sourceAligned
+    type: sourceAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -3895,9 +3857,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Source-aligned data from food production operational database
-    customProperties:
-    - property: dataProductTier
-      value: sourceAligned
+    type: sourceAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -4303,9 +4263,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Harmonized and integrated retail data from both petstores
-    customProperties:
-    - property: dataProductTier
-      value: curated
+    type: curated
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -4696,9 +4654,7 @@
     description:
       purpose: Curated food production data with quality metrics and performance
         indicators
-    customProperties:
-    - property: dataProductTier
-      value: curated
+    type: curated
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -5009,9 +4965,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Pre-aggregated analytics for business intelligence and dashboards
-    customProperties:
-    - property: dataProductTier
-      value: consumerAligned
+    type: consumerAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -5278,9 +5232,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Pre-aggregated operations metrics for production dashboards
-    customProperties:
-    - property: dataProductTier
-      value: consumerAligned
+    type: consumerAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -5498,9 +5450,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Power BI dashboards for petstore business intelligence
-    customProperties:
-    - property: dataProductTier
-      value: application
+    type: application
     - property: technology
       value: powerbi
     - property: dataProductBusinessName
@@ -5515,9 +5465,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Power BI dashboards for food production analytics
-    customProperties:
-    - property: dataProductTier
-      value: application
+    type: application
     - property: technology
       value: powerbi
     - property: dataProductBusinessName
@@ -5691,9 +5639,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Operational Oracle database for Petstore A retail operations
-    customProperties:
-    - property: dataProductTier
-      value: dataSource
+    type: dataSource
     - property: technology
       value: rdsoracle
     - property: dataProductBusinessName
@@ -5746,9 +5692,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Operational Oracle database for Pet food manufacturing
-    customProperties:
-    - property: dataProductTier
-      value: dataSource
+    type: dataSource
     - property: technology
       value: rdsoracle
     - property: dataProductBusinessName
@@ -5801,9 +5745,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Source-aligned data from Petstore A operational database
-    customProperties:
-    - property: dataProductTier
-      value: sourceAligned
+    type: sourceAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -6583,9 +6525,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Source-aligned data from food production operational database
-    customProperties:
-    - property: dataProductTier
-      value: sourceAligned
+    type: sourceAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -6991,9 +6931,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Harmonized and integrated retail data from both petstores
-    customProperties:
-    - property: dataProductTier
-      value: curated
+    type: curated
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -7384,9 +7322,7 @@
     description:
       purpose: Curated food production data with quality metrics and performance
         indicators
-    customProperties:
-    - property: dataProductTier
-      value: curated
+    type: curated
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -7697,9 +7633,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Pre-aggregated analytics for business intelligence and dashboards
-    customProperties:
-    - property: dataProductTier
-      value: consumerAligned
+    type: consumerAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -7966,9 +7900,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Pre-aggregated operations metrics for production dashboards
-    customProperties:
-    - property: dataProductTier
-      value: consumerAligned
+    type: consumerAligned
     - property: technology
       value: databricks
     - property: dataProductBusinessName
@@ -8186,9 +8118,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Power BI dashboards for petstore business intelligence
-    customProperties:
-    - property: dataProductTier
-      value: application
+    type: application
     - property: technology
       value: powerbi
     - property: dataProductBusinessName
@@ -8203,9 +8133,7 @@
     apiVersion: v1.0.0
     description:
       purpose: Power BI dashboards for food production analytics
-    customProperties:
-    - property: dataProductTier
-      value: application
+    type: application
     - property: technology
       value: powerbi
     - property: dataProductBusinessName

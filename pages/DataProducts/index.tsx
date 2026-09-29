@@ -5,7 +5,7 @@ import DataProductTabular from '../../../components/base/DataProductTabular';
 export default function Page() {
     const tableDescriptor = [
         { columnName: "Domain", odpsDescriptor: "domain", textMapper: (val, ctx) => ctx.formatDomain(val) },
-        { columnName: "Type", odpsDescriptor: "_customProperty(\"dataProductTier\")", textMapper: (val, ctx) => ctx.formatType(val) },
+        { columnName: "Type", odpsDescriptor: "type", textMapper: (val, ctx) => ctx.formatType(val) },
         { columnName: "Data Product Name", odpsDescriptor: "_customProperty(\"dataProductBusinessName\")", sidePanelLink: true },
         { columnName: "Purpose", odpsDescriptor: "description.purpose" },
         { columnName: "Stage", odpsDescriptor: "_highestEnv", displayFormat: "chip" }
