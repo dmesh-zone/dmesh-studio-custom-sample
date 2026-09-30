@@ -604,6 +604,7 @@
                   value: deltalake
               examples:
                 - 2024-06-01T08:00:00Z
+      domain: petstore
     - kind: DataProduct
       id: 3297774a-3037-5b64-b0ff-41f6c075f1d6
       name: petstore_b
@@ -1016,6 +1017,7 @@
                   value: deltalake
               examples:
                 - 2024-06-01T08:00:00Z
+      domain: petstore
     - kind: DataProduct
       id: 62771b01-e27d-5d64-8f81-e35b2c201f98
       name: petstore_c
@@ -1470,6 +1472,7 @@
                   type: sql
                   mustBe: 0
                   query: rating BETWEEN 0 AND 5
+      domain: food_production
     - kind: DataProduct
       id: 7d4e218a-a30a-579d-982d-3e8bea3904a6
       name: unified_petstore_retail_data
@@ -1582,9 +1585,9 @@
       schema:
         - name: unified_customers
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
-            unified_customers
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for unified_customers
           customProperties:
             - property: technology
               value: deltalake
@@ -1629,8 +1632,9 @@
                   mustBe: 0
         - name: unified_orders
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for unified_orders
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for unified_orders
           customProperties:
             - property: technology
               value: deltalake
@@ -1673,9 +1677,9 @@
                 - 150
         - name: unified_products
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
-            unified_products
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for unified_products
           customProperties:
             - property: technology
               value: deltalake
@@ -1710,9 +1714,9 @@
                   type: foreignKey
         - name: unified_inventory
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
-            unified_inventory
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for unified_inventory
           customProperties:
             - property: technology
               value: deltalake
@@ -1747,8 +1751,9 @@
                 - 500
         - name: sales_facts
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for sales_facts
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for sales_facts
           customProperties:
             - property: technology
               value: deltalake
@@ -1794,9 +1799,9 @@
                 - 75
         - name: customer_segments
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
-            customer_segments
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for customer_segments
           customProperties:
             - property: technology
               value: deltalake
@@ -1828,8 +1833,9 @@
                 - 1000
         - name: product_categories
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for
             product_categories
           customProperties:
             - property: technology
@@ -1860,6 +1866,7 @@
                   value: deltalake
               examples:
                 - CAT-000
+      domain: petstore
     - kind: DataProduct
       id: ac45ad74-3fb6-5b5a-bc1a-edb0968a154f
       name: food_production_analytics_data
@@ -1971,9 +1978,10 @@
       schema:
         - name: product_quality
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for product_quality
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for product_quality
           customProperties:
             - property: technology
               value: deltalake
@@ -2005,9 +2013,10 @@
                 - 97.5
         - name: batch_performance
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for batch_performance
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for batch_performance
           customProperties:
             - property: technology
               value: deltalake
@@ -2039,9 +2048,10 @@
                 - 95
         - name: material_inventory
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for material_inventory
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for material_inventory
           customProperties:
             - property: technology
               value: deltalake
@@ -2073,9 +2083,10 @@
                 - 5000
         - name: cost_analysis
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for cost_analysis
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for cost_analysis
           customProperties:
             - property: technology
               value: deltalake
@@ -2107,9 +2118,10 @@
                 - 8.5
         - name: supplier_performance
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for supplier_performance
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for supplier_performance
           customProperties:
             - property: technology
               value: deltalake
@@ -2141,9 +2153,10 @@
                 - 98.5
         - name: production_schedule
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for production_schedule
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for production_schedule
           customProperties:
             - property: technology
               value: deltalake
@@ -2173,6 +2186,7 @@
                   value: deltalake
               examples:
                 - 2000
+      domain: food_production
     - kind: DataProduct
       id: deebe052-0a1d-5d2d-b7f6-53c74cb25282
       name: petstore_business_analytics
@@ -2440,6 +2454,7 @@
                   value: deltalake
               examples:
                 - 7500
+      domain: petstore
     - kind: DataProduct
       id: a0314893-7445-5a8f-b603-d8f07ac25380
       name: food_production_operations_analytics
@@ -2658,6 +2673,7 @@
                   value: deltalake
               examples:
                 - 92.5
+      domain: food_production
     - kind: DataProduct
       id: 0c2ab542-0864-5294-91ce-cb9614c36391
       name: petstore_analytics_dashboard_data
@@ -3452,6 +3468,7 @@
                   value: deltalake
               examples:
                 - 2024-06-01T08:00:00Z
+      domain: petstore
     - kind: DataProduct
       id: 3297774a-3037-5b64-b0ff-41f6c075f1d6
       name: petstore_b
@@ -3864,6 +3881,7 @@
                   value: deltalake
               examples:
                 - 2024-06-01T08:00:00Z
+      domain: petstore
     - kind: DataProduct
       id: f951f3d6-810d-5c6b-89c4-d12c14ba15b0
       name: food_production
@@ -4273,6 +4291,7 @@
                   type: sql
                   mustBe: 0
                   query: rating BETWEEN 0 AND 5
+      domain: food_production
     - kind: DataProduct
       id: 7d4e218a-a30a-579d-982d-3e8bea3904a6
       name: unified_petstore_retail_data
@@ -4385,9 +4404,9 @@
       schema:
         - name: unified_customers
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
-            unified_customers
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for unified_customers
           customProperties:
             - property: technology
               value: deltalake
@@ -4432,8 +4451,9 @@
                   mustBe: 0
         - name: unified_orders
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for unified_orders
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for unified_orders
           customProperties:
             - property: technology
               value: deltalake
@@ -4476,9 +4496,9 @@
                 - 150
         - name: unified_products
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
-            unified_products
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for unified_products
           customProperties:
             - property: technology
               value: deltalake
@@ -4513,9 +4533,9 @@
                   type: foreignKey
         - name: unified_inventory
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
-            unified_inventory
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for unified_inventory
           customProperties:
             - property: technology
               value: deltalake
@@ -4550,8 +4570,9 @@
                 - 500
         - name: sales_facts
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for sales_facts
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for sales_facts
           customProperties:
             - property: technology
               value: deltalake
@@ -4597,9 +4618,9 @@
                 - 75
         - name: customer_segments
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
-            customer_segments
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for customer_segments
           customProperties:
             - property: technology
               value: deltalake
@@ -4631,8 +4652,9 @@
                 - 1000
         - name: product_categories
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for
             product_categories
           customProperties:
             - property: technology
@@ -4663,6 +4685,7 @@
                   value: deltalake
               examples:
                 - CAT-000
+      domain: petstore
     - kind: DataProduct
       id: ac45ad74-3fb6-5b5a-bc1a-edb0968a154f
       name: food_production_analytics_data
@@ -4774,9 +4797,10 @@
       schema:
         - name: product_quality
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for product_quality
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for product_quality
           customProperties:
             - property: technology
               value: deltalake
@@ -4808,9 +4832,10 @@
                 - 97.5
         - name: batch_performance
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for batch_performance
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for batch_performance
           customProperties:
             - property: technology
               value: deltalake
@@ -4842,9 +4867,10 @@
                 - 95
         - name: material_inventory
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for material_inventory
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for material_inventory
           customProperties:
             - property: technology
               value: deltalake
@@ -4876,9 +4902,10 @@
                 - 5000
         - name: cost_analysis
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for cost_analysis
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for cost_analysis
           customProperties:
             - property: technology
               value: deltalake
@@ -4910,9 +4937,10 @@
                 - 8.5
         - name: supplier_performance
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for supplier_performance
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for supplier_performance
           customProperties:
             - property: technology
               value: deltalake
@@ -4944,9 +4972,10 @@
                 - 98.5
         - name: production_schedule
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for production_schedule
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for production_schedule
           customProperties:
             - property: technology
               value: deltalake
@@ -4976,6 +5005,7 @@
                   value: deltalake
               examples:
                 - 2000
+      domain: food_production
     - kind: DataProduct
       id: deebe052-0a1d-5d2d-b7f6-53c74cb25282
       name: petstore_business_analytics
@@ -5243,6 +5273,7 @@
                   value: deltalake
               examples:
                 - 7500
+      domain: petstore
     - kind: DataProduct
       id: a0314893-7445-5a8f-b603-d8f07ac25380
       name: food_production_operations_analytics
@@ -5461,6 +5492,7 @@
                   value: deltalake
               examples:
                 - 92.5
+      domain: food_production
     - kind: DataProduct
       id: 0c2ab542-0864-5294-91ce-cb9614c36391
       name: petstore_analytics_dashboard_data
@@ -6185,6 +6217,7 @@
                   value: deltalake
               examples:
                 - 2024-06-01T08:00:00Z
+      domain: petstore
     - kind: DataContract
       id: 688de69e-651c-5bef-a503-bf2b68c7e7c1
       customProperties:
@@ -6540,6 +6573,7 @@
                   value: deltalake
               examples:
                 - 2024-06-01T08:00:00Z
+      domain: petstore
     - kind: DataProduct
       id: f951f3d6-810d-5c6b-89c4-d12c14ba15b0
       name: food_production
@@ -6949,6 +6983,7 @@
                   type: sql
                   mustBe: 0
                   query: rating BETWEEN 0 AND 5
+      domain: food_production
     - kind: DataProduct
       id: 7d4e218a-a30a-579d-982d-3e8bea3904a6
       name: unified_petstore_retail_data
@@ -7061,9 +7096,9 @@
       schema:
         - name: unified_customers
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
-            unified_customers
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for unified_customers
           customProperties:
             - property: technology
               value: deltalake
@@ -7108,8 +7143,9 @@
                   mustBe: 0
         - name: unified_orders
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for unified_orders
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for unified_orders
           customProperties:
             - property: technology
               value: deltalake
@@ -7152,9 +7188,9 @@
                 - 150
         - name: unified_products
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
-            unified_products
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for unified_products
           customProperties:
             - property: technology
               value: deltalake
@@ -7189,9 +7225,9 @@
                   type: foreignKey
         - name: unified_inventory
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
-            unified_inventory
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for unified_inventory
           customProperties:
             - property: technology
               value: deltalake
@@ -7226,8 +7262,9 @@
                 - 500
         - name: sales_facts
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for sales_facts
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for sales_facts
           customProperties:
             - property: technology
               value: deltalake
@@ -7273,9 +7310,9 @@
                 - 75
         - name: customer_segments
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
-            customer_segments
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for customer_segments
           customProperties:
             - property: technology
               value: deltalake
@@ -7307,8 +7344,9 @@
                 - 1000
         - name: product_categories
           physicalType: table
-          description: Unified view of customers, orders, products, inventory,
-            sales, customer segments, and product categories data for
+          description:
+            Unified view of customers, orders, products, inventory, sales,
+            customer segments, and product categories data for
             product_categories
           customProperties:
             - property: technology
@@ -7339,6 +7377,7 @@
                   value: deltalake
               examples:
                 - CAT-000
+      domain: petstore
     - kind: DataProduct
       id: ac45ad74-3fb6-5b5a-bc1a-edb0968a154f
       name: food_production_analytics_data
@@ -7450,9 +7489,10 @@
       schema:
         - name: product_quality
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for product_quality
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for product_quality
           customProperties:
             - property: technology
               value: deltalake
@@ -7484,9 +7524,10 @@
                 - 97.5
         - name: batch_performance
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for batch_performance
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for batch_performance
           customProperties:
             - property: technology
               value: deltalake
@@ -7518,9 +7559,10 @@
                 - 95
         - name: material_inventory
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for material_inventory
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for material_inventory
           customProperties:
             - property: technology
               value: deltalake
@@ -7552,9 +7594,10 @@
                 - 5000
         - name: cost_analysis
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for cost_analysis
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for cost_analysis
           customProperties:
             - property: technology
               value: deltalake
@@ -7586,9 +7629,10 @@
                 - 8.5
         - name: supplier_performance
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for supplier_performance
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for supplier_performance
           customProperties:
             - property: technology
               value: deltalake
@@ -7620,9 +7664,10 @@
                 - 98.5
         - name: production_schedule
           physicalType: table
-          description: Production data with quality metrics, batch performance,
-            inventory levels, cost analysis, supplier ratings, and production
-            schedules data for production_schedule
+          description:
+            Production data with quality metrics, batch performance, inventory
+            levels, cost analysis, supplier ratings, and production schedules
+            data for production_schedule
           customProperties:
             - property: technology
               value: deltalake
@@ -7652,6 +7697,7 @@
                   value: deltalake
               examples:
                 - 2000
+      domain: food_production
     - kind: DataProduct
       id: deebe052-0a1d-5d2d-b7f6-53c74cb25282
       name: petstore_business_analytics
@@ -7919,6 +7965,7 @@
                   value: deltalake
               examples:
                 - 7500
+      domain: petstore
     - kind: DataProduct
       id: a0314893-7445-5a8f-b603-d8f07ac25380
       name: food_production_operations_analytics
@@ -8137,6 +8184,7 @@
                   value: deltalake
               examples:
                 - 92.5
+      domain: food_production
     - kind: DataProduct
       id: 0c2ab542-0864-5294-91ce-cb9614c36391
       name: petstore_analytics_dashboard_data
