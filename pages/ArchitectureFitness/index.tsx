@@ -8,7 +8,7 @@ const customDataProductRules = extendRules(
     [
         {
             // New rule (id does not exist in base class)
-            id: 'custom-business-name-exists',
+            id: 'dataProductBusinessName-customProperty-exists',
             label: "All Data Products have a 'dataProductBusinessName' custom property",
             severity: 'warning',
             evaluate: (dp: any) => {
@@ -18,40 +18,28 @@ const customDataProductRules = extendRules(
             }
         },
         {
-            // New rule (id does not exist in base class)
-            id: 'custom-description-not-empty',
-            label: "All Data Products have a non-empty 'description.purpose' property",
-            severity: 'error',
-            evaluate: (dp: any) => {
-                if (!dp.description?.purpose || dp.description.purpose.trim() === '') {
-                    return { passed: false, reason: "Missing or empty 'description.purpose' property" };
-                }
-                return { passed: true };
-            }
-        },
-        {
             // Suppressed rule
-            id: 'name-snake-case',
+            id: 'name-convention-valid',
             suppressed: true
         }
     ]
 );
 
 // Extend DataContract rules
-const baseServersRule = dataContractRules.find(r => r.id === 'servers-are-valid')!;
+const baseServersRule = dataContractRules.find(r => r.id === 'servers-valid')!;
 const customDataContractRules = extendRules(
     dataContractRules,
     [
         {
             // Overriding rule (id exists in base class)
-            id: 'servers-are-valid',
+            id: 'servers-valid',
             label: "All Data Contracts have valid 'servers' property (must be databricks)",
             severity: 'error',
             evaluate: (dc: any) => {
                 // First run the base validation
                 const baseResult = baseServersRule.evaluate(dc);
                 if (!baseResult.passed) return baseResult;
-                
+
                 // Then run custom validation
                 for (let i = 0; i < dc.servers.length; i++) {
                     if (dc.servers[i].type !== 'databricks') {
@@ -63,7 +51,7 @@ const customDataContractRules = extendRules(
         },
         {
             // New rule (id does not exist in base class)
-            id: 'custom-contract-has-sla',
+            id: 'slaProperties-exists',
             label: "All Data Contracts have an 'slaProperties' array",
             severity: 'warning',
             evaluate: (dc: any) => {
